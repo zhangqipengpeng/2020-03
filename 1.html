@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0;maximum-scale=1.0; minimum-scale=1.0;user-scalable=no;">
+    <meta name="description " content=" ">
+    <meta name="keywords " content=" ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>name</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width: 500px;
+            margin: auto;
+        }
+
+        #main ul {
+            list-style: none;
+        }
+
+        #main li {
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border: 1px solid #000000;
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            top: 1px;
+        }
+
+        #main div {
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            border: 1px solid #000000;
+            display: none;
+        }
+
+        #main li.current {
+            border-bottom-color: #ffffff;
+        }
+
+        #main div.current {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <ul>
+            <li class="current">音乐</li>
+            <li>电视</li>
+            <li>体育</li>
+        </ul>
+        <div class="current">音乐节目</div>
+        <div>电视节目</div>
+        <div>健身节目</div>
+
+    </div>
+
+    <script>
+        let lis = document.querySelectorAll('#main li'),
+            divs = document.querySelectorAll('#main div');
+
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].className = divs[i].className = '';
+                }
+                lis[i].className = divs[i].className = 'current';
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
